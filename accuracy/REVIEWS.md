@@ -128,3 +128,16 @@ Before selling as a clinical reference:
 2. Real-device 3D and accessibility pass.
 3. Replace schematic meshes with licensed, provenance-recorded scan data (v0.2).
 4. Legal review of disclaimers, ownership and any anatomical-data licences.
+
+---
+
+## 2026-11-25 — Label pass (stage 1 of the second-opinion feedback)
+
+The first pass of the external “another opinion” report emphasised real labels before higher accuracy claims. Fixes made now:
+
+- Labels are **off by default** on both the Ear and Eye explorers; the toggle shows named structures and is independent of the analogue **Layers** toggles.
+- The ear’s three middle-ear labels (Malleus, Incus, Stapes) are replaced by **one grouped label** (`Malleus · Incus · Stapes`) on the stapes handle, so the ankled chain reads as one teachable group.
+- Labels now use the default year-3-friendly size (about 11px) and a high-contrast background; on mobile they shrink to 10px.
+- We kept the “schematic” badge visible until each 3D model has a named reviewer; realism is not the same as accuracy.
+
+**Not done yet:** leader-line layout, scripted label-overlap checks at multiple camera presets, hiding labels behind occluded structures, and procuring real ear meshes (licence/commissioned).

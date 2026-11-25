@@ -11,6 +11,7 @@ An interactive five-portal atlas for medical students: ear, nose, pharynx, laryn
 - React Router 7 (declarative mode), upgraded after external audit discovered advisory fixed only in v7
 - React 18, TypeScript, lucide-react, clsx
 - Hand-authored content in `src/data/` (no external content API, no patient data)
+- **Realistic meshes:** CC0 human ear and eye (27 MB GLB, 800k triangles, 4K textures) from [Grab3D](https://grab3d.com/models/anatomy/human-ear-anatomy) — archived as `public/models/ear/human-ear-anatomy.glb` and `public/models/eye/human-eye.glb`. CC0: no attribution required.
 
 Production dependencies audit clean on 2026-11-25 (`npm audit --omit=dev`: 0 vulnerabilities). The only remaining advisory is in Vite's development-time esbuild server and does not affect the static production bundle.
 

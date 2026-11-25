@@ -1515,18 +1515,22 @@ svg {
 }
 
 .label3d {
-  padding: 3px 7px;
-  border: 1px solid rgba(94, 234, 212, 0.32);
+  padding: 4px 8px;
+  border: 1px solid rgba(46, 245, 162, 0.45);
   border-radius: 999px;
-  background: rgba(6, 20, 24, 0.84);
-  color: #c7fff7;
+  background: rgba(6, 20, 24, 0.9);
+  color: #d6fff5;
   font-family: var(--sans);
-  font-size: 9px;
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.45;
   white-space: nowrap;
   backdrop-filter: blur(4px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   transition: background 0.15s ease;
+}
+
+@media (max-width: 720px) {
+  .label3d { font-size: 10px; padding: 3px 7px; }
 }
 
 .label3d:hover {

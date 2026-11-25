@@ -702,9 +702,7 @@ function SceneContent({
         text="Tympanic membrane"
         show={showLabel('tympanic-membrane')}
       />
-      <Label id="malleus" position={[-1.38, 0.52, 0.1]} text="Malleus" show={showLabel('malleus')} />
-      <Label id="incus" position={[-1.02, 0.55, -0.2]} text="Incus" show={showLabel('incus')} />
-      <Label id="stapes" position={[-0.6, 0.3, 0.2]} text="Stapes" show={showLabel('stapes')} />
+      <Label id="stapes" position={[-0.6, 0.3, 0.2]} text="Malleus · Incus · Stapes" show={showLabel('stapes')} />
       <Label id="cochlea" position={[1.3, 0.98, 0.2]} text="Cochlea" show={showLabel('cochlea')} />
       <Label id="vestibule" position={[1.15, 1.15, 0]} text="Vestibule" show={showLabel('vestibule')} />
       <Label

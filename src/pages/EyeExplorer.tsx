@@ -31,7 +31,7 @@ export default function EyeExplorer() {
     retina: true,
     muscles: true,
   })
-  const [labels, setLabels] = useState(true)
+  const [labels, setLabels] = useState(false)
   const [cutaway, setCutaway] = useState(false)
   const [cataract, setCataract] = useState(() => {
     const value = Number(cataractParam ?? 0)

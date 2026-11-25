@@ -42,7 +42,7 @@ export default function EarExplorer() {
     inner: true,
     nerves: true,
   })
-  const [labels, setLabels] = useState(true)
+  const [labels, setLabels] = useState(false)
   const [pulse, setPulse] = useState(false)
   const [resetKey, setResetKey] = useState(0)
 

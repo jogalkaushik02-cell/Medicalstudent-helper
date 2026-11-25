@@ -1,4 +1,5 @@
 import { renderToString } from 'react-dom/server'
+import { Suspense } from 'react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import Shell from '../src/components/Shell'
 import Home from '../src/pages/Home'
@@ -47,8 +48,9 @@ for (const url of routes) {
   try {
     const html = renderToString(
         <MemoryRouter initialEntries={[url]}>
-          <Routes>
-            <Route element={<Shell />}>
+          <Suspense fallback={<div className="page" />}>
+            <Routes>
+              <Route element={<Shell />}>
               <Route index element={<Home />} />
               <Route path="ear" element={<EarExplorer />} />
               <Route path="eye" element={<EyeExplorer />} />
@@ -62,6 +64,7 @@ for (const url of routes) {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
+          </Suspense>
         </MemoryRouter>
     )
     if (html.length < 500) throw new Error(`suspiciously short output (${html.length} chars)`)

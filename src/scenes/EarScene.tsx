@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, OrbitControls } from '@react-three/drei'
+import { Html, OrbitControls, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 export type EarOverlay =
@@ -758,6 +758,7 @@ export default function EarScene({
   resetKey,
 }: EarSceneProps) {
   const [hovered, setHovered] = useState<string | null>(null)
+  const model = useGLTF('/models/ear/human-ear-anatomy.glb')
 
   return (
     <AnatomyContext.Provider value={{ selected, hovered, select: onSelect, setHovered }}>
@@ -768,6 +769,12 @@ export default function EarScene({
         gl={{ antialias: true, alpha: true }}
         onPointerMissed={() => onSelect(null)}
       >
+        <ambientLight intensity={0.75} />
+        <hemisphereLight args={['#d8efff', '#1a2230', 0.55]} />
+        <directionalLight position={[6, 8, 9]} intensity={1.55} />
+        <directionalLight position={[-8, 2, -6]} intensity={0.7} />
+        <pointLight position={[0, -4, 6]} intensity={0.45} />
+        <primitive object={model.scene} scale={[0.52, 0.52, 0.52]} position={[0, 0.55, 0.05]} rotation={[0.02, 0.4, 0.03]} />
         <ambientLight intensity={0.75} />
         <hemisphereLight args={['#d8efff', '#1a2230', 0.55]} />
         <directionalLight position={[6, 8, 9]} intensity={1.55} />

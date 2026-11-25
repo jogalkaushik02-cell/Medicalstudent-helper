@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, OrbitControls } from '@react-three/drei'
+import { Html, OrbitControls, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 export interface EyeLayers {
@@ -555,6 +555,7 @@ export default function EyeScene({
   resetKey,
 }: EyeSceneProps) {
   const [hovered, setHovered] = useState<string | null>(null)
+  const model = useGLTF('/models/eye/human-eye.glb')
 
   return (
     <AnatomyContext.Provider value={{ selected, hovered, select: onSelect, setHovered }}>
@@ -570,6 +571,7 @@ export default function EyeScene({
         <directionalLight position={[5, 7, 8]} intensity={1.5} />
         <directionalLight position={[-7, 2, -5]} intensity={0.65} />
         <pointLight position={[0, -3, 5]} intensity={0.4} />
+        <primitive object={model.scene} scale={[0.95, 0.95, 0.95]} position={[0, 0.02, 0]} />
 
         <SceneContent
           layers={layers}
